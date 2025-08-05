@@ -4,9 +4,20 @@ import App from './App.vue';
 import router from './router';
 import { createPinia } from 'pinia';
 
-const app = createApp(App);
-const pinia = createPinia();
+// Vuetifyのインポート
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
 
-app.use(pinia);
-app.use(router);
-app.mount('#app');
+// Vuetifyのインスタンスを作成
+const vuetify = createVuetify({
+  components,
+  directives,
+});
+
+createApp(App)
+  .use(createPinia())
+  .use(router)
+  .use(vuetify)
+  .mount('#app');
