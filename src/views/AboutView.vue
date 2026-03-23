@@ -2,7 +2,7 @@
   <div>
     <h1>About画面です</h1>
     <p>Aboutでのカウンターの値：{{counterStore.count}}</p>
-    <button @click="counterStore.increment">カウントアップ</button>
+    <button @click="() => counterStore.increment(1)">カウントアップ</button>
   </div>
 </template>
 
